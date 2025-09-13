@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Build / output folders
+build/
+dist/
+.expo/
+.expo-shared/
+*.log
+
+# Bundled files
+*.min.js
+*.bundle.js
+
+# Generated assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Misc
+coverage/
+
+#rn
+android/
+
+#extra
+src/api/lib/sdk.ts

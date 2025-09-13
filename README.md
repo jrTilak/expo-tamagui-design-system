@@ -1,50 +1,97 @@
-# Welcome to your Expo app 👋
+# Expo Tamagui Design System
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is my personal collection of **Tamagui-based UI components** for my personal projects. The design system is built to follow a similar pattern as **shadcn/ui**, with the goal of making components as reusable and flexible as possible.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Reusable Tamagui components
+- Theme support (light & dark)
+- Built with Expo + Tamagui
+- Follows a consistent design pattern for easy scaling
 
-   ```bash
-   npm install
-   ```
+## Getting Started
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 1. Create an Expo app
 
 ```bash
-npm run reset-project
+pnpm create expo-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Setup Tamagui
 
-## Learn more
+Follow the official Tamagui setup guide:
+[https://tamagui.dev/docs/intro/setup](https://tamagui.dev/docs/intro/setup)
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Add Configs
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Copy the configs from:
 
-## Join the community
+```
+src/configs/tamagui-configs/*
+```
 
-Join our community of developers creating universal apps.
+to your project.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 4. Add the Provider
+
+Wrap your app layout with the Tamagui provider from:
+
+```
+/src/providers/tamagui-provider.tsx
+```
+
+Example:
+
+```tsx
+import "react-native-reanimated";
+import {
+  Outfit_400Regular,
+  Outfit_500Medium,
+  Outfit_600SemiBold,
+  Outfit_700Bold,
+  useFonts as useOutfitFonts,
+} from "@expo-google-fonts/outfit";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
+import { TamaguiProvider } from "@/providers/tamagui-provider";
+import { Stack } from "@/registry/ui/stack";
+
+SplashScreen.preventAutoHideAsync();
+export default function RootLayout() {
+  const [outfitLoaded] = useOutfitFonts({
+    Outfit: Outfit_400Regular,
+    "Outfit-Medium": Outfit_500Medium,
+    "Outfit-SemiBold": Outfit_600SemiBold,
+    "Outfit-Bold": Outfit_700Bold,
+  });
+
+  useEffect(() => {
+    if (outfitLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [outfitLoaded]);
+
+  if (!outfitLoaded) {
+    return null;
+  }
+  return (
+    <TamaguiProvider>
+      <Stack />
+    </TamaguiProvider>
+  );
+}
+```
+
+### 5. You are good to go!
+
+Start using the prebuilt components in your layouts and build your UI consistently.
+
+## Notes
+
+- This design system is for **personal use**, you can use it if you want. 😄
+- Components are designed for **maximum reusability**.
+- Inspired by **shadcn/ui** pattern and best practices in Tamagui.
+
+---
+
+Happy coding! 🚀
