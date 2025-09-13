@@ -1,6 +1,7 @@
 # Button Component
 
 A customizable button built with **Tamagui** for React Native and Expo. Supports multiple variants, sizes, loading states, and icons.
+
 [Official Tamagui Button Docs](https://tamagui.dev/ui/button)
 
 ## Features
@@ -10,6 +11,14 @@ A customizable button built with **Tamagui** for React Native and Expo. Supports
 - **Loading state** with spinner
 - **Icons** before or after text
 - Fully **customizable** via Tamagui theme tokens
+
+## Install
+
+```bash
+curl -o ./src/components/ui/button.tsx \
+  https://raw.githubusercontent.com/jrtilak/expo-tamagui-design-system/main/src/registry/ui/button/src/button.tsx
+
+```
 
 ## Usage
 
