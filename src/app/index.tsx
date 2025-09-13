@@ -1,15 +1,9 @@
-import { Text, View } from "react-native";
 import { AArrowDown } from "@tamagui/lucide-icons";
 import { Button } from "@/registry/ui/button/src/button";
+import { Container } from "@/registry/ui/container/src/container";
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <Container>
       <Button
         variant="secondary"
         size={"default"}
@@ -17,6 +11,6 @@ export default function Index() {
       >
         Click me!
       </Button>
-    </View>
+    </Container>
   );
 }
