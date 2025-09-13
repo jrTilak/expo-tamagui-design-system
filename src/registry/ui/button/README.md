@@ -16,7 +16,7 @@ A customizable button built with **Tamagui** for React Native and Expo. Supports
 
 ```bash
 curl -o ./src/components/ui/button.tsx \
-  https://raw.githubusercontent.com/jrtilak/expo-tamagui-design-system/main/src/registry/ui/button/src/button.tsx
+  https://raw.githubusercontent.com/jrtilak/expo-tamagui-design-system/master/src/registry/ui/button/src/button.tsx
 
 ```
 
