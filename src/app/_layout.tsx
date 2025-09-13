@@ -9,7 +9,7 @@ import {
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { TamaguiProvider } from "@/providers/tamagui-provider";
-import { Stack } from "@/registry/ui/stack";
+import { Stack } from "@/registry/ui/stack/src/stack";
 
 SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
